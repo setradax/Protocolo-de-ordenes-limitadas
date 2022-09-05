@@ -1,6 +1,6 @@
-# Quick start
+# Inicio rápido
 
-Example, how to create and fill a limit order:
+Ejemplo, cómo crear y completar una orden limitada:
 
 ```typescript
 import Web3 from 'web3';
@@ -24,7 +24,7 @@ const limitOrderProtocolFacade = new LimitOrderProtocolFacade(
     contractAddress,
     connector
 );
-// Create a limit order and it's signature
+// Crear una orden de límite y su firma
 const limitOrder = limitOrderBuilder.buildLimitOrder({
     makerAssetAddress: '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
     takerAssetAddress: '0x111111111117dc0aa78b770fa6a738034120c302',
@@ -50,8 +50,8 @@ const callData = limitOrderProtocolFacade.fillLimitOrder(
     '0',
     '50'
 );
-// Send transaction for the order filling
-// Must be implemented
+// Enviar transacción para completar el pedido
+// Debe ser implementado
 sendTransaction({
     from: walletAddress,
     gas: 210_000, // Set your gas limit
@@ -61,8 +61,9 @@ sendTransaction({
 });
 ```
 
-**Note:** you can use any implementation for the provider.  
-Just implement the `ProviderConnector` interface:
+
+**Nota:** puede usar cualquier implementación para el proveedor.
+Simplemente implemente la interfaz `ProviderConnector`:
 
 ```typescript
 class MyProviderConnector implements ProviderConnector {
